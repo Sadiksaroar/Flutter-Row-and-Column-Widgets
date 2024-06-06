@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -9,22 +9,28 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Container example"),
+      home: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(title: Text("colulm"),),
+              body: Column(
+            children: <Widget>[
+              Container(
+                height: 300,
+                width: 159,
+                color: Colors.black,
+              ),
+              SizedBox(
+                height: 20,
+                width: 15,
+               // color:Color.alphaBlend(foreground, background)
+              ),
+              Container(
+                height: 300,
+                width: 159,
+                color: Colors.black,
+              )
+            ],
         ),
-        body: Container(
-          height: 200,
-          width: double.infinity,
-          alignment: Alignment.center,
-          margin: const EdgeInsets.all(20),
-          padding: const EdgeInsets.all(30),
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.black, width: 5),
-          ),
-          child: const Text("Hello, Sadik Saroar",
-          style: TextStyle(fontSize: 20),
-          ),
         ),
       ),
     );
